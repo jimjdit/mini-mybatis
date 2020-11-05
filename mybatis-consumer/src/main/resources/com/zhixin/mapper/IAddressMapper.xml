@@ -1,0 +1,22 @@
+<mapper namespace="com.zhixin.mapper.IAddressMapper">
+
+    <select id="selectList"  resultType="com.zhixin.domain.Address">
+        select * from address
+    </select>
+
+    <select id="selectOne"  resultType="com.zhixin.domain.Address" paramType="com.zhixin.domain.Address">
+        select * from address where id = #{id} and province = #{province}
+    </select>
+
+    <insert id="insert" paramType="com.zhixin.domain.Address">
+        insert into address (id,userId,province,city) value(#{id} , #{userId} , #{province} ,#{city})
+    </insert>
+
+    <update id="update" paramType="com.zhixin.domain.Address">
+        update address set province = #{province} where id = #{id}
+    </update>
+
+    <delete id="delete" paramType="com.zhixin.domain.Address">
+        delete from address where id = #{id}
+    </delete>
+</mapper>
